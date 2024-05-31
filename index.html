@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Stylesheet --->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Javascript --->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .top-section{
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-image: url('./table.png');
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+       
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .col {
+            flex: 1;
+            padding: 10px;
+        }
+        @media (max-width: 600px) {
+            .row {
+                flex-direction: column;
+            }
+            .img{
+               margin-top: 50px;
+                width: 86%;
+            }
+        }
+
+        /*city*/
+        .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.col {
+    flex: 1;
+    padding: 10px;
+}
+
+.city-image {
+    display: block;
+    margin: 0 auto;
+}
+
+.description {
+    margin-top: 200px;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col {
+        width: 100%;
+        text-align: center;
+    }
+
+    .city-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .description {
+        margin-top: 20px;
+
+    }
+}
+/*language*/
+        .table {
+            border: 1px solid black;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            font-size: 24px;
+        }
+        .th {
+            background-color: #f2f2f2;
+        }
+
+
+        /* subjects*/
+     .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.box {
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    flex: 0 0 auto;
+}
+       
+
+        @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+    }
+}
+    </style>
+</head>
+<body>
+    <!--user-->
+    <div class="top-section">
+        <div class="row">
+            <div class="col s17">
+                <p style="font-size: 24px; margin-left: 60px; margin-top: 120px; color:aliceblue;">{{user.fullName}}</p>
+            </div>
+            <div class="col s17">
+                <img src="{{user.photo}}" alt="me" height="300px" width="280px">
+            </div>
+
+        </div>
+    </div>
+
+    <!--City-->
+    <div class="container">
+        <div class="row">
+            <div class="col s17">
+                <h2 style="font-size: 32px; margin-left: 60px; margin-top: 80px; color:black;">{{city.phrase}}</h2>
+                <p style="font-size: 24px; margin-left: 60px; margin-top: 10px; color:black;">{{city.name}}</p>
+                <img src="{{city.photo}}" alt="me" height="300px" width="280px">
+            </div>
+            <div class="col s17">
+                <p style="font-size: 14px; margin-left: 0px; width:100%; margin-top: 200px; color:black;">The Owl House: This eccentric museum, created by artist Helen Martins, is a must-see. Her whimsical sculptures and colorful creations using ostrich eggshells offer a unique glimpse into her artistic vision.
+
+                    Karoo Landscape: The vast, semi-arid Karoo landscape surrounding Nieu-Bethesda is a photographer's paradise. Dramatic sunsets, starry night skies, and unique rock formations create a sense of tranquility and remoteness.
+                    
+                    Arts and Crafts Scene: Nieu-Bethesda fosters a vibrant arts and crafts scene. Explore local galleries and studios to discover one-of-a-kind pieces by talented artisans.
+                    
+                    Stargazing Paradise: With minimal light pollution, Nieu-Bethesda offers exceptional stargazing opportunities. Witness the Milky Way in all its glory and marvel at the constellations on a clear night.
+                    
+                    Relaxing Escape: Nieu-Bethesda provides a welcome escape from the hustle and bustle of city life. Enjoy the slow pace, friendly locals, and peaceful atmosphere.</p>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <!--language-->
+    <div class="container">
+        <div class="row">
+            <div class="col ">
+                <h2 style="font-size: 32px; margin-left: 60px; margin-top: 80px; color:black;">{{foreignLanguage.language}}</h2>
+                <p style="font-size: 14px; margin-top: 10px; color:black;">{{foreignLanguage.phrase}}</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <table class="table" style="width:100%">
+                    <tr>
+                    {{#each foreignLanguage.phrases}}
+                    <tr>
+                        <td>
+                            {{englishPhrase}}
+                        </td>
+                        <td>
+                            {{foreignLanguage}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+        
+        </div>
+    </div>
+
+
+
+    <!--subjects-->
+    <div class="container">
+        <div class="row">
+            <h2 style="font-size: 32px; margin-left: 60px; margin-top: 80px; color:black;">{{favouriteSubjects.title}}</h2>
+         </div>
+    </div>
+    <div class="container">
+        {{#each favouriteSubjects.subjects}}
+        <div class="box">
+            <div class="heading">
+                <p style="font-size: 20px;">{{this.name}}</p>
+            </div>
+            <div class="content">
+                <img src="{{this.photo}}" alt="Image 1" width="250px" height="250px" class="image">
+            </div>
+        </div>
+        {{/each}}
+    </div>
+           
+</body>
+</html>

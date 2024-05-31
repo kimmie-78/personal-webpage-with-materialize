@@ -1,0 +1,53 @@
+{
+    "user" : {
+        "fullName": "Kimberley R Isaac",
+        "photo" : "./Kimberley_Isaac_Image.jpeg"
+        
+    },
+    "city" : {
+        "phrase": "Why City?",
+        "name" : "Nieu-Bethesda",
+        "photo" : "./Nieu.jpg",
+        "description" : ""
+    },
+    "foreignLanguage" : {
+        "language" : "Korean",
+        "phrase":"I have been intrigued by the Korean language ever since I first listened to Korean pop music.",
+        "phrases" : [{
+            "englishPhrase" : "English Phrase",
+            "foreignLanguage" : "Korean Phrase (Romanization)"
+        },{
+            "englishPhrase" : "Hello",
+            "foreignLanguage" : "Anyeonghaseyo (안녕하세요)"
+        },
+        {
+            "englishPhrase" : "Thank you",
+            "foreignLanguage" : "Kamsahamnida (감사합니다)"
+        } ,
+        {
+            "englishPhrase" : "How are you?",
+            "foreignLanguage" : "Jal jinae (잘 지내?)"
+        }]
+    },
+    "favouriteSubjects" : {
+        "title": "SUBJECTS",
+        "phrase": "Graduated with BCom in Information Systems at the University of Johannesburg",
+        
+        "subjects":[
+        {
+            "name" : "Development Software",
+            "photo" : "./dev.jpg"
+        },
+        {
+            "name" : "Entrepreneurship",
+            "photo" : "./Entre.jpg"
+        },
+        {
+            "name" : "Information System",
+            "photo" : "./info.jpg"
+        }]
+    }
+    
+
+
+}
